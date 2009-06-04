@@ -16,6 +16,7 @@ class TranslateController < ActionController::Base
     sort_keys
     paginate_keys
     @total_entries = @keys.size
+    render :template => 'translate/index'
   end
   
   def translate

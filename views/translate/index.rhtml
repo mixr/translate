@@ -42,6 +42,14 @@
     </p>
   </div>
   <% end %>
+  <br/>
+  <p>
+    <%= link_to_function "Show I18n.load_path (#{I18n.load_path.size})", "$('load_path').toggle();" %>
+  </p>
+  <div id="load_path" style="display: none;">
+    <%= I18n.load_path.join("<br/>") %>
+  </div>
+
 	<p class="hits">
 	  Found <strong><%= @total_entries %></strong> messages
 	</p>
@@ -52,7 +60,7 @@
 
 
 <div class="paging">
-  <%= render :partial => 'pagination', :locals => {:total_entries => @total_entries, :per_page => per_page} %>
+  <%= render :partial => 'translate/pagination', :locals => {:total_entries => @total_entries, :per_page => per_page} %>
 </div>
 
 <% if @total_entries > 0 %>
@@ -110,5 +118,5 @@
 <% end %>
 
 <div class="paging">
-  <%= render :partial => 'pagination', :locals => {:total_entries => @total_entries, :per_page => per_page} %>
+  <%= render :partial => 'translate/pagination', :locals => {:total_entries => @total_entries, :per_page => per_page} %>
 </div>
