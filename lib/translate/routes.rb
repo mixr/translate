@@ -1,10 +1,10 @@
 module Translate
   class Routes
-    def self.translation_ui(map)
-      map.with_options(:controller => 'translate') do |t|
-        t.translate_list 'translate'
-        t.translate 'translate/translate', :action => 'translate'
-        t.translate_reload 'translate/reload', :action => 'reload'
+    def self.translation_ui(map, controller = 'translate')
+      map.with_options(:controller => controller) do |t|
+        t.translate_list controller
+        t.translate "#{controller}/translate", :action => 'translate'
+        t.translate_reload "#{controller}/reload", :action => 'reload'
       end
     end
   end
