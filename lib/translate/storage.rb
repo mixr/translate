@@ -15,6 +15,6 @@ class Translate::Storage
   end
   
   def file_path
-    File.join(Rails.root, "config", "locales", "#{locale}.yml")
+    File.join(Rails.root, "config", "locales", "extracted", "#{locale}.yml")
   end
 end
